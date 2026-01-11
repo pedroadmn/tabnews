@@ -1,8 +1,7 @@
 import database from "infra/database.js";
-import { InternalServerError } from "infra/errors.js"
+import { InternalServerError } from "infra/errors.js";
 
 async function status(request, response) {
-
   try {
     const updatedAt = new Date().toISOString();
 
@@ -38,7 +37,7 @@ async function status(request, response) {
       cause: error,
     });
 
-    console.log('\n Error dentro do catch do controller:')
+    console.log("\n Error dentro do catch do controller:");
     console.error(publicErrorObject);
 
     response.status(500).json(publicErrorObject);
